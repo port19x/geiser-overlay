@@ -1,5 +1,10 @@
 # geiser-overlay
 
+<!--
+[![MELPA](https://melpa.org/packages/geiser-overlay-badge.svg)](https://melpa.org/#/geiser-overlay)
+[![MELPA Stable](https://stable.melpa.org/packages/geiser-overlay-badge.svg)](https://stable.melpa.org/#/geiser-overlay)
+-->
+
 Overlay Scheme evaluation results.
 This is mostly a s/sly-/geiser-/g of sly-overlay.
 Sly-overlay borrows from EROS, which borrows from CIDER.
@@ -13,7 +18,7 @@ There is otherwise no other special setup necessary for using the library.
 
 `geiser-overlay` is not yet available on MELPA.
 
-*Working on it*
+[*Working on it*](https://github.com/melpa/melpa/pull/9148)
 
 ### Contributing
 
