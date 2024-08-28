@@ -15,7 +15,8 @@
 ;;
 ;;; Commentary:
 ;;
-;; Overlay Scheme evaluation results. This is mostly a s/sly-/geiser-/g of sly-overlay.
+;; Overlay Scheme evaluation results.
+;; This is mostly a s/sly-/geiser-/g of sly-overlay.
 ;; Sly-overlay borrows from EROS, which borrows from CIDER.
 ;;
 ;; Bind `geiser-overlay-eval-defun' to whatever you normally bind `geiser-eval-defun' to.
@@ -39,8 +40,8 @@
   :package-version '(geiser-overlay "1.0.0"))
 
 (defcustom geiser-overlay-display-eval-counter nil
-  "Include the geiser eval counter in evaluation output"
-  :group 'geiser-overlay
+  "Include the geiser eval counter in evaluation output."
+  :Group 'geiser-overlay
   :type 'string
   :package-version '(geiser-overlay "1.0.0"))
 
@@ -57,8 +58,8 @@ with lower priority than the syntax highlighting."
 
 (defcustom geiser-overlay-overlays-use-font-lock t
   "If non-nil, results overlays are font-locked as Clojure code.
-If nil, apply `geiser-overlay-result-overlay-face' to the entire overlay instead of
-font-locking it."
+If nil, apply `geiser-overlay-result-overlay-face' to the entire
+overlay instead of font-locking it."
   :group 'geiser-overlay
   :type 'boolean
   :package-version '(geiser-overlay "1.0.0"))
