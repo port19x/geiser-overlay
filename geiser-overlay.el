@@ -214,7 +214,7 @@ This function also removes itself from `pre-command-hook'."
   value)
 
 ;; yoinked from sly directly
-(defun geiser-region-for-defun-at-point (&optional pos)
+(defun geiser-overlay-region-for-defun-at-point (&optional pos)
   "Return a list (START END) for the positions of defun at POS.
 POS defaults to point"
   (save-excursion
@@ -227,7 +227,7 @@ POS defaults to point"
 
 (defun geiser-overlay--defun-at-point ()
   "Get the sexp at point as a string."
-  (pcase (geiser-region-for-defun-at-point)
+  (pcase (geiser-overlay-region-for-defun-at-point)
     (`(,start ,end) (string-trim (buffer-substring-no-properties start end)))))
 
 ;; --- API --- ;;
