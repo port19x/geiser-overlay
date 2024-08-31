@@ -39,12 +39,6 @@
   :type 'string
   :package-version '(geiser-overlay "1.0.0"))
 
-(defcustom geiser-overlay-display-eval-counter nil
-  "Include the geiser eval counter in evaluation output."
-  :Group 'geiser-overlay
-  :type 'string
-  :package-version '(geiser-overlay "1.0.0"))
-
 (defface geiser-overlay-result-overlay-face
   '((((class color) (background light))
      :background "grey90" :box (:line-width -1 :color "yellow"))
@@ -237,10 +231,9 @@ POS defaults to point"
 (defun geiser-overlay-eval-defun ()
   "Evaluate the form at point and overlay the results."
   (interactive)
-  (let* ((result (geiser-eval--retort-output (geiser-eval--send/wait (geiser-overlay--defun-at-point))))
-         (without-eval-count (mapconcat 'identity (nthcdr 2 (split-string result)))))
+  (let ((result (geiser-eval--retort-output (geiser-eval--send/wait (geiser-overlay--defun-at-point)))))
     (geiser-overlay--eval-overlay
-     (if geiser-overlay-display-eval-counter result without-eval-count)
+     result
      (save-excursion
        (end-of-defun)
        (point)))
