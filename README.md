@@ -5,7 +5,10 @@
 [![MELPA Stable](https://stable.melpa.org/packages/geiser-overlay-badge.svg)](https://stable.melpa.org/#/geiser-overlay)
 -->
 
-Overlay Scheme evaluation results.
+*Overlay Scheme evaluation results*
+
+<img src="./demo.png">
+
 This is mostly a s/sly-/geiser-/g of sly-overlay.
 Sly-overlay borrows from EROS, which borrows from CIDER.
 
