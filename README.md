@@ -1,7 +1,5 @@
 # geiser-overlay
 
-*Absolutely borked for now. May or may not be fixxed*
-
 <!--
 [![MELPA](https://melpa.org/packages/geiser-overlay-badge.svg)](https://melpa.org/#/geiser-overlay)
 [![MELPA Stable](https://stable.melpa.org/packages/geiser-overlay-badge.svg)](https://stable.melpa.org/#/geiser-overlay)
