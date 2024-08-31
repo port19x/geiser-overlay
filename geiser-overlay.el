@@ -225,13 +225,17 @@ POS defaults to point"
   (pcase (geiser-overlay-region-for-defun-at-point)
     (`(,start ,end) (string-trim (buffer-substring-no-properties start end)))))
 
+(defun geiser-overlay--enquote ()
+  "Prepare the scheme expression string for evaluation by geiser"
+  `(:eval (:scm ,(geiser-overlay--defun-at-point))))
+
 ;; --- API --- ;;
 
 ;;;###autoload
 (defun geiser-overlay-eval-defun ()
   "Evaluate the form at point and overlay the results."
   (interactive)
-  (let ((result (geiser-eval--retort-output (geiser-eval--send/wait (geiser-overlay--defun-at-point)))))
+  (let ((result (geiser-eval--retort-result (geiser-eval--send/wait (geiser-overlay--enquote)))))
     (geiser-overlay--eval-overlay
      result
      (save-excursion
