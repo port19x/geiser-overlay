@@ -226,7 +226,7 @@ POS defaults to point"
     (`(,start ,end) (string-trim (buffer-substring-no-properties start end)))))
 
 (defun geiser-overlay--enquote ()
-  "Prepare the scheme expression string for evaluation by geiser"
+  "Prepare the scheme expression string for evaluation by geiser."
   `(:eval (:scm ,(geiser-overlay--defun-at-point))))
 
 ;; --- API --- ;;
