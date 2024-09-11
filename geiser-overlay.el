@@ -3,7 +3,7 @@
 ;; Copyright (C) 2024 Colin Woodbury
 ;;
 ;; Author: port19 <port19@port19.xyz>
-;; Version: 1.0.0
+;; Version: 1.1.0
 ;; Package-Requires: ((emacs "24.4") (geiser "0.31"))
 ;; SPDX-License-Identifier: LGPL-3.0-or-later
 ;; Keywords: lisp, scheme
@@ -25,6 +25,11 @@
 
 (require 'cl-lib)
 (require 'geiser)
+(require 'pulse)
+
+;; Entertaining The Byte Compiler
+(declare-function geiser-eval--send/wait "")
+(declare-function geiser-eval--retort-result "")
 
 ;; --- Customizable settings --- ;;
 
@@ -32,6 +37,12 @@
   "Evaluation result overlays for Common Lisp."
   :prefix "geiser-overlay-"
   :group 'lisp)
+
+(defcustom geiser-overlay-pulse t
+  "The prefix displayed in the minibuffer before a result value."
+  :group 'geiser-overlay
+  :type 'boolean
+  :package-version '(geiser-overlay "1.1.0"))
 
 (defcustom geiser-overlay-eval-result-prefix "=> "
   "The prefix displayed in the minibuffer before a result value."
@@ -83,6 +94,7 @@ PROPS is a plist of properties and values to add to the overlay."
     (overlay-put o 'geiser-overlay-temporary t)
     (while props (overlay-put o (pop props) (pop props)))
     (push #'geiser-overlay--delete-overlay (overlay-get o 'modification-hooks))
+    (when geiser-overlay-pulse (pulse-momentary-highlight-region l r))
     o))
 
 (defun geiser-overlay--delete-overlay (ov &rest _)
