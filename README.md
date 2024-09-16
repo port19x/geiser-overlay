@@ -1,7 +1,7 @@
 # geiser-overlay
 
-<!--
 [![MELPA](https://melpa.org/packages/geiser-overlay-badge.svg)](https://melpa.org/#/geiser-overlay)
+<!--
 [![MELPA Stable](https://stable.melpa.org/packages/geiser-overlay-badge.svg)](https://stable.melpa.org/#/geiser-overlay)
 -->
 
