@@ -19,9 +19,9 @@ There is otherwise no other special setup necessary for using the library.
 
 ### Installation
 
-`geiser-overlay` is not yet available on MELPA.
+`geiser-overlay` is available on MELPA.
 
-[*Working on it*](https://github.com/melpa/melpa/pull/9148)
+Install it like you would any other emacs package.
 
 ### Contributing
 
