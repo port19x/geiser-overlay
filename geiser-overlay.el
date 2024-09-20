@@ -1,6 +1,6 @@
 ;;; geiser-overlay.el --- Overlay Scheme evaluation results -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2024 Colin Woodbury
+;; Copyright (C) port19
 ;;
 ;; Author: port19 <port19@port19.xyz>
 ;; Version: 1.1.0
